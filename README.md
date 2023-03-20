@@ -15,11 +15,4 @@ Things included are:
 
 * `Dockerfile`
 
-* `GitHub copilot`
-
-* `jupyter` and `ipython` 
-
-* A base set of libraries for devops and web
-
-* `githubactions` 
 
