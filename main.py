@@ -24,14 +24,14 @@ async def queryNumber1(location:str):
 async def queryNumber2(location:str):
     res=queryConfirmedByLocation(location)
     ans={};
-    ans["Average deaths of : "+location+" is "]=res
+    ans["Average Confirmed of : "+location+" is "]=res
     return ans
 
 @app.get("/location3/{location3}")
 async def queryNumber3(location:str):
     res=queryRecoveredByLocation(location)
     ans={};
-    ans["Average deaths of : "+location+" is "]=res
+    ans["Average Recovered of : "+location+" is "]=res
     return ans
 
 if __name__ == "__main__":
