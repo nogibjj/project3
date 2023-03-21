@@ -26,5 +26,6 @@ Things included are:
 * `QUERY AVERAGE CONFIRMED BY CONTRY AND REGION`
 
 * `QUERY AVERAGE RECOVERED BY CONTRY AND REGION`
+
 ![Figure](https://github.com/nogibjj/project3/blob/main/Screenshot%202023-03-21%20124626.png)
 
