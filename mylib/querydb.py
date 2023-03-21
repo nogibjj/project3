@@ -43,7 +43,7 @@ def queryRecoveredByLocation(location):
     average=calAvg(queryres)
     return average
 
-#QUERY THE
+#QUERY THE average of a list
 def calAvg(list):
     sum = 0
     for row in list:
