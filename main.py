@@ -13,21 +13,21 @@ app = FastAPI()
 async def root():
     return {"message": "Hello Databricks"}
     
-@app.get("/location/{location}")
+@app.get("/location1/{location1}")
 async def queryNumber1(location:str):
     res=queryDeathsByLocation(location)
     ans={};
     ans["Average deaths of : "+location+" is "]=res
     return ans
 
-@app.get("/location/{location}")
+@app.get("/location2/{location2}")
 async def queryNumber2(location:str):
     res=queryConfirmedByLocation(location)
     ans={};
     ans["Average deaths of : "+location+" is "]=res
     return ans
 
-@app.get("/location/{location}")
+@app.get("/location3/{location3}")
 async def queryNumber3(location:str):
     res=queryRecoveredByLocation(location)
     ans={};

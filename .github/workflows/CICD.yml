@@ -1,4 +1,4 @@
-name: CI
+name:  Python application test with Github Actions using devcontainers
 on:
   push:
     branches: [ "main" ]
