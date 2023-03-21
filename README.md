@@ -16,3 +16,13 @@ Things included are:
 * `Dockerfile`
 
 
+2. Upload the database to databricks and set up the connection with codespace.
+
+3. Perform DATA ENGINEERING TASK.
+
+* `QUERY AVERAGE DEATHS BY CONTRY AND REGION`
+
+* `QUERY AVERAGE CONFIRMED BY CONTRY AND REGION`
+
+* `QUERY AVERAGE RECOVERED BY CONTRY AND REGION`
+
