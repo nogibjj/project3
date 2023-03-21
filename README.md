@@ -17,7 +17,6 @@ Things included are:
 
 
 2. Upload the database to databricks and set up the connection with codespace.
-![Figure](https://github.com/nogibjj/project3/blob/main/Screenshot%202023-03-21%20120924.png)
 
 3. Perform DATA ENGINEERING TASK.
 
