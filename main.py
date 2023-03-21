@@ -2,10 +2,10 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from dblib.querydb import querydb
-from dblib.querydb import queryDeathsByLocation
-from dblib.querydb import queryConfirmedByLocation
-from dblib.querydb import queryRecoveredByLocation
+from mylib.querydb import querydb
+from mylib.querydb import queryDeathsByLocation
+from mylib.querydb import queryConfirmedByLocation
+from mylib.querydb import queryRecoveredByLocation
 import uvicorn
 app = FastAPI()
 
