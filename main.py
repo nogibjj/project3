@@ -3,6 +3,9 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from dblib.querydb import querydb
+from dblib.querydb import queryDeathsByLocation
+from dblib.querydb import queryConfirmedByLocation
+from dblib.querydb import queryRecoveredByLocation
 import uvicorn
 app = FastAPI()
 
@@ -11,12 +14,25 @@ async def root():
     return {"message": "Hello Databricks"}
     
 @app.get("/location/{location}")
-async def queryNumber(location:str):
-    res=queryByLocation(location)
+async def queryNumber1(location:str):
+    res=queryDeathsByLocation(location)
     ans={};
-    ans["Average salary of the salary currency: "+location+" is "]=res
+    ans["Average deaths of : "+location+" is "]=res
     return ans
-    
+
+@app.get("/location/{location}")
+async def queryNumber2(location:str):
+    res=queryConfirmedByLocation(location)
+    ans={};
+    ans["Average deaths of : "+location+" is "]=res
+    return ans
+
+@app.get("/location/{location}")
+async def queryNumber3(location:str):
+    res=queryRecoveredByLocation(location)
+    ans={};
+    ans["Average deaths of : "+location+" is "]=res
+    return ans
 
 if __name__ == "__main__":
     uvicorn.run(app, port=8080, host="0.0.0.0")

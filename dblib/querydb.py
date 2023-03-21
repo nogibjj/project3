@@ -2,8 +2,8 @@ import os
 import json
 from databricks import sql
 
-
-def querydb(query="SELECT * FROM hive_metastore.default.covid_19_data_1 LIMIT 2"):
+#ESTABLISH THE CONNECTION TO THE DATABASE
+def querydb(query="SELECT * FROM hive_metastore.default.covid_19 LIMIT 2"):
     with sql.connect(
         server_hostname="adb-4595415223479783.3.azuredatabricks.net",
         http_path="sql/protocolv1/o/4595415223479783/0207-153520-2sxkrahk",
@@ -19,13 +19,28 @@ def querydb(query="SELECT * FROM hive_metastore.default.covid_19_data_1 LIMIT 2"
 
     return result
 
-
-def queryByLocation(location):
-    querysentence= "SELECT Deaths FROM hive_metastore.default.covid_19_data_1 where Country/Region=\'"+location+"\';"
+#QUERY THE AVERAGE DEATHS BY LOCATION
+def queryDeathsByLocation(location):
+    querysentence= "SELECT Deaths FROM hive_metastore.default.covid_19 where Country=\'"+location+"\';"
     queryres=querydb(querysentence)
-    average_salary=calAvg(queryres)
-    return average_salary
+    average=calAvg(queryres)
+    return average
 
+#QUERY THE AVERAGE CONFIRMED BY LOCATION
+def queryConfirmedByLocation(location):
+    querysentence= "SELECT Confirmed FROM hive_metastore.default.covid_19 where Country=\'"+location+"\';"
+    queryres=querydb(querysentence)
+    average=calAvg(queryres)
+    return average
+
+#QUERY THE AVERAGE RECOVERED BY LOCATION
+def queryRecoveredByLocation(location):
+    querysentence= "SELECT Recovered FROM hive_metastore.default.covid_19 where Country=\'"+location+"\';"
+    queryres=querydb(querysentence)
+    average=calAvg(queryres)
+    return average
+
+#QUERY THE
 def calAvg(list):
     sum = 0
     for row in list:
