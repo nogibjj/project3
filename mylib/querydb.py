@@ -2,6 +2,9 @@ import os
 import json
 from databricks import sql
 
+def add(a, b):
+    return a + b
+
 #ESTABLISH THE CONNECTION TO THE DATABASE
 def querydb(query="SELECT * FROM hive_metastore.default.covid_19 LIMIT 2"):
     with sql.connect(
