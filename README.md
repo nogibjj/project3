@@ -17,9 +17,16 @@ Things included are:
 
 
 2. Upload the database to databricks and set up the connection with codespace.
+
+* `create a cluster`
+
+![Figure](https://github.com/nogibjj/project3/blob/main/Screen%20Shot%202023-03-21%20at%208.02.16%20PM.png)
+
 ![Figure](https://github.com/nogibjj/project3/blob/main/Screenshot%202023-03-21%20120924.png)
 
 3. Perform DATA ENGINEERING TASK.
+
+![Figure](https://github.com/nogibjj/project3/blob/main/Screen%20Shot%202023-03-21%20at%208.03.25%20PM.png)
 
 * `QUERY AVERAGE DEATHS BY CONTRY AND REGION`
 
