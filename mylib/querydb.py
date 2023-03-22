@@ -26,26 +26,27 @@ def querydb(query="SELECT * FROM hive_metastore.default.covid_19 LIMIT 2"):
 def queryDeathsByLocation(location):
     querysentence= "SELECT Deaths FROM hive_metastore.default.covid_19 where Country=\'"+location+"\';"
     queryres=querydb(querysentence)
-    average=calAvg(queryres)
+    average=calAvg(queryres, "Deaths")
     return average
 
 #QUERY THE AVERAGE CONFIRMED BY LOCATION
 def queryConfirmedByLocation(location):
     querysentence= "SELECT Confirmed FROM hive_metastore.default.covid_19 where Country=\'"+location+"\';"
     queryres=querydb(querysentence)
-    average=calAvg(queryres)
+    average=calAvg(queryres, "Confirmed")
     return average
 
 #QUERY THE AVERAGE RECOVERED BY LOCATION
 def queryRecoveredByLocation(location):
     querysentence= "SELECT Recovered FROM hive_metastore.default.covid_19 where Country=\'"+location+"\';"
     queryres=querydb(querysentence)
-    average=calAvg(queryres)
+    average=calAvg(queryres, "Recovered")
     return average
 
 #QUERY THE average of a list
-def calAvg(list):
+def calAvg(list,key):
     sum = 0
     for row in list:
-        sum += int(row["Deaths"])
+        sum += int(row[key])
     return round(sum / len(list), 2)
+
